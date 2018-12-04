@@ -32,4 +32,26 @@
 en:
   app_title: Music Web App
   app_description: Your customizable web music collection!
-  
+
+  home:
+    home:
+      title: Music Web App
+      welcome: Your music collection!
+
+    contact:
+      title: Contact Us
+      contact_us: Having trouble with your library? Complete this form and we'll get back to you as quickly as possible!
+
+      name: "Name:"
+      enter_name: Enter your name
+      email: "Email:"
+      enter_email: Enter your email address
+      telephone: "Telephone:"
+      enter_telephone: Enter your telephone number
+      message: "Message:"
+      enter_message: What do they want to say?
+      submit: Contact Us
+
+    request_contact:
+      no_email: You must supply an email address
+      email_sent: Thank you. We will be in touch shortly.
