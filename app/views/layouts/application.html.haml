@@ -15,9 +15,8 @@
     = javascript_include_tag 'modernizr'
     = csrf_meta_tags
 
-
-  %body
     = render 'shared/header'
+  %body
     - flash.each do |key, value|
       = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
     = yield

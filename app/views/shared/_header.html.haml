@@ -1,12 +1,21 @@
-%header.navbar
-  %h2
-    %ul.links
-      %li
-        = link_to "Home", root_path
-      %li
-        = link_to "Contact", contact_path
-    %ul.auth
-      %li
-        = link_to "Login", root_path
-      %li
-        = link_to "Signup", root_path
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %a.navbar-brand{:href => root_path} UrMusicLib
+  %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNavAltMarkup", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarNavAltMarkup.collapse.navbar-collapse
+    .navbar-nav
+      %a.nav-item.nav-link{:href => root_path} Home
+      %a.nav-item.nav-link{:href => contact_path} Contact
+
+-#%header.navbar
+-#  %h2
+-#    %ul.links
+-#      %li
+-#        = link_to "Home", root_path
+-#      %li
+-#        = link_to "Contact", contact_path
+-#    %ul.auth
+-#      %li
+-#        = link_to "Login", root_path
+-#      %li
+-#        = link_to "Signup", root_path
