@@ -1,7 +1,42 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$nav-color: #2ACCFF;
+
+
 form label, form input {
 display: block;
 margin: 10px;
+}
+
+.navbar {
+  padding:0;
+  background-color: $nav-color;
+  width: 100%;
+  overflow: hidden;
+
+  ul {
+    list-style: none;
+
+    li {
+      display:inline;
+      padding-left: 10px;
+      padding-right: 10px;
+      //padding-bottom: 10px;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
+.links {
+  float: left;
+}
+
+.auth {
+  float: right;
 }
