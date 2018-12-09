@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  artist: MyString
+  title: MyString1
+  artist: MyString2
   composer: MyString
   genre: MyString
   year: 2018-12-07
   comments: MyString
 
 two:
-  title: MyString
-  artist: MyString
+  title: MyString3
+  artist: MyString4
   composer: MyString
   genre: MyString
   year: 2018-12-07
