@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_175034) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_albums_on_artist_id"
-    t.index ["title", nil], name: "index_albums_on_title_and_artist", unique: true
+    t.index ["title", "artist_id"], name: "index_albums_on_title_and_artist_id", unique: true
   end
 
   create_table "artists", force: :cascade do |t|

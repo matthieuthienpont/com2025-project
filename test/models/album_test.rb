@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class AlbumTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  setup do
+    @artist = artists(:one)
+  end
+
   test 'should not save empty album' do
     album = Album.new
     album.save
@@ -15,6 +17,6 @@ class AlbumTest < ActiveSupport::TestCase
     album.title = 'My Album'
     album.artist = @artist
     album.save
-    assert task.valid?
+    assert album.valid?
   end
 end
