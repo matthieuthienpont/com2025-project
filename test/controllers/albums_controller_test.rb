@@ -3,6 +3,7 @@ require 'test_helper'
 class AlbumsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @album = albums(:one)
+    @artist = artists(:one)
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create album" do
     assert_difference('Album.count') do
-      post albums_url, params: { album: { artist: @album.artist, comments: @album.comments, composer: @album.composer, genre: @album.genre, title: @album.title, year: @album.year + " create"} }
+      post albums_url, params: { album: { artist_id: @artist, comments: @album.comments, composer: @album.composer, genre: @album.genre, title: @album.title, year: @album.year + " create" } }
     end
 
     assert_redirected_to album_url(Album.last)
@@ -34,7 +35,7 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update album" do
-    patch album_url(@album), params: { album: { artist: @album.artist, comments: @album.comments, composer: @album.composer, genre: @album.genre, title: @album.title, year: @album.year } }
+    patch album_url(@album), params: { album: { artist_id: @artist, comments: @album.comments, composer: @album.composer, genre: @album.genre, title: @album.title, year: @album.year } }
     assert_redirected_to album_url(@album)
   end
 
@@ -45,6 +46,4 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to albums_url
   end
-
-
 end

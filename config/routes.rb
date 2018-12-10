@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :artists
   resources :albums
   get 'home', to: 'home#home'
   get 'contact', to: 'home#contact'

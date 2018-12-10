@@ -14,7 +14,7 @@ class AlbumsTest < ApplicationSystemTestCase
     visit albums_url
     click_on "New Album"
 
-    fill_in "Artist", with: @album.artist
+    fill_in "Artist", with: @album.artist_id
     fill_in "Comments", with: @album.comments
     fill_in "Composer", with: @album.composer
     fill_in "Genre", with: @album.genre
@@ -30,7 +30,7 @@ class AlbumsTest < ApplicationSystemTestCase
     visit albums_url
     click_on "Edit", match: :first
 
-    fill_in "Artist", with: @album.artist
+    fill_in "Artist", with: @album.artist_id
     fill_in "Comments", with: @album.comments
     fill_in "Composer", with: @album.composer
     fill_in "Genre", with: @album.genre

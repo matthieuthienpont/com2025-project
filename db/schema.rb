@@ -10,18 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_07_225745) do
+ActiveRecord::Schema.define(version: 2018_12_09_175034) do
 
   create_table "albums", force: :cascade do |t|
     t.string "title", null: false
-    t.string "artist", null: false
-    t.string "composer", null: false
-    t.string "genre", null: false
-    t.date "year", null: false
+    t.integer "artist_id", null: false
+    t.string "composer"
+    t.string "genre"
+    t.date "year"
     t.string "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["title", "artist"], name: "index_albums_on_title_and_artist", unique: true
+    t.index ["artist_id"], name: "index_albums_on_artist_id"
+    t.index ["title", nil], name: "index_albums_on_title_and_artist", unique: true
+  end
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_artists_on_name", unique: true
   end
 
 end
