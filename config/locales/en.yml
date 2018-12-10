@@ -30,12 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  app_title: Music Web App
+  app_title: UrMusicLib
   app_description: Your customizable web music collection!
 
   home:
     home:
-      title: Music Web App
+      title: UrMusicLib
       welcome: Your music collection!
 
     contact:
@@ -55,3 +55,9 @@ en:
     request_contact:
       no_email: You must supply an email address
       email_sent: Thank you. We will be in touch shortly.
+
+    artists:
+      add_album: Add Album
+      edit: Edit
+      back: Back
+      successful_create: 'Album was successfully created.'

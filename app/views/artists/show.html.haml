@@ -4,6 +4,8 @@
   %b Name:
   = @artist.name
 
-= link_to 'Edit', edit_artist_path(@artist)
+%p= link_to t('.add_album'), new_album_path(artist_id: @artist)
+
+= link_to t('.edit'), edit_artist_path(@artist)
 \|
-= link_to 'Back', artists_path
+= link_to t('.back'), artists_path

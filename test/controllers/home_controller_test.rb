@@ -6,8 +6,8 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get '/home'
     assert_response :success
     assert_template layout: 'application'
-    assert_select 'title', 'Music Web App'
-    assert_select 'h1', 'Music Web App'
+    assert_select 'title', 'UrMusicLib'
+    assert_select 'h1', 'UrMusicLib'
     assert_select 'p', 'Your music collection!'
   end
 
@@ -15,7 +15,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get '/contact'
     assert_response :success
     assert_template layout: 'application'
-    assert_select 'title', 'Music Web App'
+    assert_select 'title', 'UrMusicLib'
     assert_select 'h1', 'Contact Us'
     assert_select 'p', 'Having trouble with your library? Complete this form and we\'ll get back to you as quickly as possible!'
   end

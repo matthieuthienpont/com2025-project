@@ -12,13 +12,13 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_album_url
+    get :new, note_id: @note
     assert_response :success
   end
 
   test "should create album" do
     assert_difference('Album.count') do
-      post albums_url, params: { album: { artist_id: @artist, comments: @album.comments, composer: @album.composer, genre: @album.genre, title: @album.title, year: @album.year} }
+      post albums_url, params: { album: { artist_id: @artist.id, comments: @album.comments, composer: @album.composer, genre: @album.genre, title: @album.title, year: @album.year} }
     end
 
     assert_redirected_to album_url(Album.last)
@@ -35,7 +35,7 @@ class AlbumsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update album" do
-    patch album_url(@album), params: { album: { artist_id: @artist, comments: @album.comments, composer: @album.composer, genre: @album.genre, title: @album.title, year: @album.year } }
+    patch album_url(@album), params: { album: { artist_id: @artist.id, comments: @album.comments, composer: @album.composer, genre: @album.genre, title: @album.title, year: @album.year } }
     assert_redirected_to album_url(@album)
   end
 

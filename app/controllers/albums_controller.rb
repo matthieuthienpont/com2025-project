@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_album, only: [:new, :create, :destroy]
 
   # GET /albums
   # GET /albums.json
@@ -14,7 +14,7 @@ class AlbumsController < ApplicationController
 
   # GET /albums/new
   def new
-    @album = Album.new
+    @album = @artist.albums.new
   end
 
   # GET /albums/1/edit
@@ -24,11 +24,11 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(album_params)
+    @album = @artist.albums.new(album_params)
 
     respond_to do |format|
       if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
+        format.html { redirect_to @album, notice: t('.successful_create') }
         format.json { render :show, status: :created, location: @album }
       else
         format.html { render :new }
@@ -64,7 +64,11 @@ class AlbumsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
-      @album = Album.find(params[:id])
+      @album = Album.find_by(params[:id])
+    end
+
+    def set_artist
+      @artist = Artist.find_by(id:params[:artist_id]) || Artist.find(album_params[:artist_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
