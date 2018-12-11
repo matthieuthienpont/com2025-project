@@ -9,7 +9,7 @@
       %a.nav-item.nav-link{:href => contact_path} Contact
       %a.nav-item.nav-link{:href => artists_path} Artists
       %a.nav-item.nav-link{:href => albums_path} Albums
-    %nav
+    %nav.auth
       - if user_signed_in?
         = "#{current_user.email} |"
         = link_to t('profile'), edit_user_registration_path

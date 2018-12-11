@@ -1,10 +1,12 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
   before_action :set_artist, only: [:new, :create]
+  before_action :authenticate_user!
+
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @albums = Album.user_albums(current_user)
   end
 
   # GET /albums/1
@@ -27,7 +29,7 @@ class AlbumsController < ApplicationController
     @album = @artist.albums.new(album_params)
 
     respond_to do |format|
-      if @album.save
+      if @album.save!
         format.html { redirect_to @album, notice: t('.successful_create') }
         format.json { render :show, status: :created, location: @album }
       else

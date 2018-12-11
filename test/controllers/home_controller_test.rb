@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::ControllerHelpers
 
   test "should get home" do
     get '/home'

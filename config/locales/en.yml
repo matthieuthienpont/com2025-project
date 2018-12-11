@@ -56,10 +56,10 @@ en:
       no_email: You must supply an email address
       email_sent: Thank you. We will be in touch shortly.
 
-    artists:
-      add_album: Add Album
-      edit: Edit
-      back: Back
+  artists:
+    add_album: Add Album
+    edit: Edit
+    back: Back
 
-    albums:
-      successful_create: 'Album was successfully created.'
+  albums:
+    successful_create: 'Album was successfully created.'

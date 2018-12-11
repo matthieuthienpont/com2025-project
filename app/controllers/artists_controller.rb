@@ -1,10 +1,11 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /artists
   # GET /artists.json
   def index
-    @artists = Artist.all
+    @artists = Artist.user_artists(current_user)
   end
 
   # GET /artists/1
@@ -25,9 +26,10 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def create
     @artist = Artist.new(artist_params)
+    @artist.user = current_user
 
     respond_to do |format|
-      if @artist.save
+      if @artist.save!
         format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
         format.json { render :show, status: :created, location: @artist }
       else
