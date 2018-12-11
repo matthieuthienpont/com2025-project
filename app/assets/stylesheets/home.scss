@@ -6,10 +6,20 @@
 
 $nav-color: #2ACCFF;
 
-form label, form input {
-display: block;
+form label {
+display:block;
 margin: 10px;
 }
+
+form input, form button {
+display:inline-block;
+}
+
+.myform {
+  float: none;
+  text-align: center;
+}
+
 
 /*.navbar {
   padding:0;
