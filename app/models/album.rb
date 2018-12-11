@@ -1,5 +1,5 @@
 class Album < ApplicationRecord
   belongs_to :artist
-  validates :title, presence: true
-  validates :title, :uniqueness => {:scope => :artist_id}
+  validates :title, :artist, presence: true
+  validates :title, :uniqueness => {:scope => :artist}
 end

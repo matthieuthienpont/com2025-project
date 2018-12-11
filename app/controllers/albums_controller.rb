@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
-  before_action :set_album, only: [:new, :create, :destroy]
-
+  before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_artist, only: [:new, :create]
   # GET /albums
   # GET /albums.json
   def index
@@ -64,7 +64,7 @@ class AlbumsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
-      @album = Album.find_by(params[:id])
+      @album = Album.find(params[:id])
     end
 
     def set_artist

@@ -60,4 +60,6 @@ en:
       add_album: Add Album
       edit: Edit
       back: Back
+
+    albums:
       successful_create: 'Album was successfully created.'
